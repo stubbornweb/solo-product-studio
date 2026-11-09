@@ -1,6 +1,6 @@
 # Studio — agent rules
 
-This repository holds the shared documents of the studio: the words in `GLOSSARY.md`, the system decisions in `docs/adr/`, the system brief in `PROJECT-DESCRIPTION.md`, and the one plugin marketplace in `.claude-plugin/marketplace.json`.
+This repository holds the shared documents of the studio: the words in `GLOSSARY.md`, the system decisions in `docs/adr/`, and the one plugin marketplace in `.claude-plugin/marketplace.json`. The studio is a project too. Its meta repo is `stubbornweb/solo-product-studio-meta`, with the idea and the system brief in `1-idea/`.
 
 ## Shared rules
 
@@ -17,4 +17,4 @@ This repository holds the shared documents of the studio: the words in `GLOSSARY
 
 ## Issue tracker
 
-Issues and wayfinder maps live in GitHub Issues for `stubbornweb/studio` (`gh` CLI). A map has the label `wayfinder:map`, and its tickets are its sub-issues.
+Issues and wayfinder maps live in GitHub Issues for `stubbornweb/solo-product-studio` (`gh` CLI). A map has the label `wayfinder:map`, and its tickets are its sub-issues.
