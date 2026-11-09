@@ -61,17 +61,20 @@ _Avoid_: Project Hub, Cockpit
 ### Ideas and projects
 
 **Idea**:
-A possible product or piece of work that has not yet received the PROCEED verdict.
+A possible product or piece of work that does not have the PROCEED verdict.
 
 **Decision record**:
 The written result of judging an idea: its verdict, the reasons and the open assumptions.
+
+**Revision round**:
+A new round of judging an idea that already has a decision record. It can change the verdict.
 
 **Verdict**:
 The result of judging an idea: PROCEED, REFINE, PARK or REJECT.
 _Avoid_: state, status
 
 **Project**:
-An idea that received the PROCEED verdict, or an existing product that joins the studio. A project that comes from an idea keeps the slug of its idea.
+An idea that has the PROCEED verdict, or an existing product that joins the studio. A project that comes from an idea keeps the slug of its idea.
 
 **Meta repo**:
 The private repo of one idea. It is made when work on the idea starts. It holds the notes, research, sources and the output of every stage, and it stays the same repo when the idea becomes a project.
