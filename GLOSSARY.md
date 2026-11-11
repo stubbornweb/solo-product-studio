@@ -50,6 +50,10 @@ A change to one engine that the AI suggests from a source. The owner approves it
 An example, such as a website or a prompt, that one project uses for its design or build, with what to take from it. It does not change any engine. A link that no project uses yet is not a reference.
 _Avoid_: practice, pattern (for an example that only one project uses)
 
+**Work sample**:
+A real piece of the client's current work, such as an order, a form, a price list or their current site, with the customers' personal data removed. The AI uses it to understand the work.
+_Avoid_: example (an example site the client likes is a reference)
+
 **Pattern**:
 A reusable part of a site, such as an interaction or a layout, that an engine keeps for many projects.
 _Avoid_: reference (for a part that many projects use)
@@ -90,11 +94,19 @@ _Avoid_: status file
 **Client project**:
 A project that a client pays for.
 
+**Diagnosis**:
+A paid first step for a client. The owner studies the client's work and returns a ranked list of what to fix, with the money math and a demo. Its fee counts toward the build.
+_Avoid_: assessment, audit
+
+**Care plan**:
+A monthly paid plan after a client project is live: the owner keeps the product working and makes small changes.
+_Avoid_: retainer, maintenance plan, support contract
+
 **Own project**:
 A project whose product the owner owns.
 
 **Product**:
-What a project delivers for customers to use: a website, an app or a tool.
+What a project delivers for customers to use: a website, an app, a tool or an AI workflow.
 _Avoid_: deliverable
 
 **Prototype**:
