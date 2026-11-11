@@ -5,7 +5,7 @@ One person maintains every part of the studio. So all code uses one toolchain, e
 ## Code
 
 - All studio code uses strict TypeScript on Node 26 or later (`"engines": { "node": ">=26" }`), npm with a committed lockfile, and `vite-plus`. `vp check` runs format, lint and type checks. `vp test` runs the tests.
-- Skills, `clients-meta` and the notes in meta repos are Markdown only.
+- A script in any repo, an engine repo included, uses this same baseline. Any other file format is decided when a repo needs it.
 - A new code repo with TypeScript code uses the same baseline. The Prototype Engine's `docs/stack-policy.md` chooses its framework. An existing site that joins later keeps its own stack.
 
 ## Branches and merges
@@ -22,7 +22,7 @@ Each repo has one GitHub Actions workflow with `permissions: contents: read`:
 | Repo | CI runs |
 | --- | --- |
 | `prototype-engine`, `hub`, code repos | `npm ci`, `vp check`, `vp test` on Node 26 |
-| `idea-engine` | `claude plugin validate` on the plugin |
+| `idea-engine` | `npm ci`, `vp check`, `vp test` on Node 26, then `claude plugin validate` on the plugin |
 | `solo-product-studio` | `claude plugin validate --strict` on the marketplace |
 | meta repos, `clients-meta` | no CI |
 
