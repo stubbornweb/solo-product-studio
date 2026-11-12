@@ -68,7 +68,6 @@ A results check records the real results of a live project and the owner's resul
 ## Considered options
 
 - **Results checks for own projects only.** Rejected: client projects also test practices, and one way of working is simpler.
-- **The skill in the `studio` plugin.** Rejected: that plugin holds the one skill that serves no stage.
 - **A new Live Engine.** Rejected: one more repo with its own CI, licence and `AGENTS.md`, for one skill.
 - **A check at a fixed time after launch, with a reminder.** Rejected: the Hub only reads, so nothing can send the reminder.
 - **One file that each check updates.** Rejected: older results are then only in the git history.

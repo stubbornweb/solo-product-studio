@@ -44,7 +44,7 @@ A way of working that one engine follows. It is "proven" or "worth testing".
 An article, video, book, case or piece of code that a practice comes from.
 
 **Practice proposal**:
-A change to one engine that the AI suggests from a source. The owner approves it or rejects it.
+A proposal from the `learn-from-source` skill whose target is an engine. It changes how the engine works, and it has the label "proven" or "worth testing" (ADR 0005). The owner approves it or rejects it.
 
 **Reference**:
 An example, such as a website or a prompt, that one project uses for its design or build, with what to take from it. It does not change any engine. A link that no project uses yet is not a reference.
