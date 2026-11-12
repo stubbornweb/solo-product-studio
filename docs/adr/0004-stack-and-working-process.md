@@ -10,7 +10,7 @@ One person maintains every part of the studio. So all code uses one toolchain, e
 
 ## Branches and merges
 
-- Now: agents work on a branch and open a pull request. Only the owner merges. The `AGENTS.md` rules tell agents this.
+- Now: data (research, sources, notes and logs) goes straight to `main`. Code goes through a pull request, and only the owner merges. A meta repo commits everything straight to `main` until the owner sets its stage to `live`. `clients-meta` and a client project use pull requests from the start. `home/AGENTS.md` in `YevheniiVolosiuk/home` holds these rules for every repo.
 - Before the first client code or client credential goes into a repo:
   - A Claude Code hook on the owner's computer blocks every `git push` to `main`, in all repos.
   - On public repos, GitHub protects `main`: changes come only through a pull request, and CI must pass. No review is required, because GitHub does not let the owner approve their own pull request.
@@ -43,12 +43,13 @@ Every public repo has an MIT `LICENSE` file.
 
 ## Agent rules
 
-Every repo has its own short `AGENTS.md`, because an agent in one repo cannot see the others. Each one starts with these shared rules, then adds the rules for that repo:
+The rules for branches and merges and the agent skills setup live once, in `home/AGENTS.md`. Claude Code loads that file in every session under `~/www`, through `~/www/CLAUDE.md`.
 
-1. Work on a branch and open a pull request. Never push to `main`.
-2. Write a failing test first for any code with logic.
-3. Run the repo's check before you open a pull request.
-4. Write all text in plain English (Simplified Technical English style, CEFR B1).
+Every repo also has its own short `AGENTS.md`. It starts with these shared rules, then adds the rules for that repo:
+
+1. Write a failing test first for any code with logic.
+2. Run the repo's check before you commit code. A repo with no check: read the full diff.
+3. Write all text in plain English (Simplified Technical English style, CEFR B1).
 
 `AGENTS.md` holds all the rules. `CLAUDE.md` has only one line, `@AGENTS.md`, so Claude Code loads the same rules as every other agent.
 
@@ -69,10 +70,11 @@ A new engine repo has:
 
 - **Node 25.** Rejected: it reached end of life on June 1, 2026. Node 26 is the LTS version until April 2029.
 - **Each repo picks its own tools.** Rejected: one person cannot maintain several toolchains.
-- **Only one shared rules file, linked from each repo.** Rejected: agents often do not follow links into another repo.
+- **Only one shared rules file, linked from each repo.** Rejected: agents often do not follow links into another repo. `home/AGENTS.md` needs no link, because Claude Code loads it in every session under `~/www`.
+- **A copy of the branch rules and the agent skills setup in every repo.** Rejected: the copies drift apart. The cost of one copy in `home`: a cloud session or a Sandcastle container sees only its repo, so it does not get these rules.
 - **`CLAUDE.md` as a symlink to `AGENTS.md`, or as a second rules file.** Rejected: a symlink can break on Windows and in some git setups, and a second rules file hides its rules from agents other than Claude.
 - **GitHub Team, to protect `main` on private repos.** Rejected: the hook on the owner's computer blocks pushes to `main`.
-- **The push hook and branch protection now.** Rejected: the owner ships first, and the `AGENTS.md` rules already keep agents off `main`.
+- **The push hook and branch protection now.** Rejected: the owner ships first, and the rules in `home/AGENTS.md` already say what goes through a pull request.
 - **Version numbers and tags for each release.** Rejected: when `version` is set and not raised, users do not get new commits. A forgotten step then loses the update without a warning.
 - **`claude plugin validate --strict` on an engine plugin.** Rejected: `--strict` makes every warning an error, and the check warns about two choices in this ADR, the plugin with no `version` field and the `CLAUDE.md` at the plugin root. Without `--strict`, errors still fail CI. The marketplace has no such warnings, so its check keeps `--strict`.
 - **Markdown lint and link checks in CI.** Rejected: more config and failed pull requests about style, and they check nothing that breaks a tool.
