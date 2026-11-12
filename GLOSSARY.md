@@ -68,7 +68,11 @@ _Avoid_: Project Hub, Cockpit
 A possible product or piece of work that does not have the PROCEED verdict.
 
 **Decision record**:
-The written result of judging an idea: its verdict, the reasons and the open assumptions.
+The written result of judging an idea: its verdict, the reasons, the product decisions and the open assumptions.
+
+**Product decision**:
+A choice the owner makes in the grilling about what the product is, such as who pays, the price, the input, the data rules, or what the first version does. It is not an assumption: an assumption is a claim that the idea depends on and that the outside world can prove wrong.
+_Avoid_: the owner's answer, first version (for the list of these choices)
 
 **Revision round**:
 A new round of judging an idea that already has a decision record. It can change the verdict.
