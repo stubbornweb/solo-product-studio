@@ -11,6 +11,7 @@ This repository holds the shared documents of the studio: the words in `GLOSSARY
 ## Repo rules
 
 - Use the words in `GLOSSARY.md`.
+- A proposal for an engine follows ADR 0005.
 - `docs/sources/` holds read-only snapshots. Decisions go in an ADR or an issue.
 - Read an engine's files from `stubbornweb/<engine>` on GitHub, or from its local clone after `git pull` on `main`. The plugin cache in `~/.claude/plugins/cache/` can be older than `main`.
 - Each engine plugin has one entry in `.claude-plugin/marketplace.json`, with no `version` field, so every merge to `main` of the engine repo is a release.

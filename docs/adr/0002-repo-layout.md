@@ -4,7 +4,7 @@ Each part of the studio has its own repo. Every idea has one **meta repo** for i
 
 | Repo | Holds | Visibility |
 | --- | --- | --- |
-| `solo-product-studio` (today `studio`) | The main entrance of the studio: the one plugin marketplace, the `studio` plugin, the glossary, the system ADRs and the wayfinder maps. It is the code repo of the studio project, and the engine repos are its parts | public |
+| `solo-product-studio` (today `studio`) | The main entrance of the studio: the one plugin marketplace, the glossary, the system ADRs and the wayfinder maps. It is the code repo of the studio project, and the engine repos are its parts | public |
 | `hub` | The Hub. Made when the Hub build starts | public |
 | `idea-engine` | Idea Engine skills, as one plugin | public |
 | `prototype-engine` | Prototype Engine CLI, skills, templates and patterns, as one plugin | public |
