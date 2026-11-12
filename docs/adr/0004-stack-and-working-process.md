@@ -12,7 +12,7 @@ One person maintains every part of the studio. So all code uses one toolchain, e
 
 - Now: data (research, sources, notes and logs) goes straight to `main`. Code goes through a pull request, and only the owner merges. A meta repo commits everything straight to `main` until the owner sets its stage to `live`. `clients-meta` and a client project use pull requests from the start. `home/AGENTS.md` in `YevheniiVolosiuk/home` holds these rules for every repo.
 - Before the first client code or client credential goes into a repo:
-  - A Claude Code hook on the owner's computer blocks every `git push` to `main`, in all repos.
+  - A Claude Code hook on the owner's computer blocks every `git push` to `main` in the repos of a live project: its meta repo and its code repo, when `PROJECT.md` says `**Stage:** live`. A live project has a released version that people use often.
   - On public repos, GitHub protects `main`: changes come only through a pull request, and CI must pass. No review is required, because GitHub does not let the owner approve their own pull request.
 
 ## CI
