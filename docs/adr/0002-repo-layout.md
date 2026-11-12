@@ -22,7 +22,6 @@ Rules:
 - **A code repo is made when the build starts.** It holds the code and the documents that explain how the code works, such as `README.md`, the ADRs and a glossary. The project history (idea, research, plans, stage output) stays in the meta repo.
 - **Client folders are in `clients-meta`**, because one client can order several projects.
 - **Each engine repo is a Claude Code plugin**, so its skills work inside any meta repo or code repo. The `solo-product-studio` repo holds the one marketplace that lists them.
-- The registry repos (`web-developmet-registry`, `the-registry`) are not part of the studio.
 
 ## Considered options
 
