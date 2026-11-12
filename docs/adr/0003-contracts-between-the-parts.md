@@ -76,12 +76,19 @@ A code repo has no project file and no stage folders:
 
 An idea without the PROCEED verdict has no project file. The Hub reads its verdict from the `**Verdict:**` line of `1-idea/IDEA-DECISION.md`.
 
+## Product decisions
+
+`idea-grill` writes the product decisions of an idea in the "Product decisions" section of `1-idea/IDEA-DECISION.md`, after "Why this and not the alternative". The section has one line for each topic, such as `**Price:** about 29 PLN per month`. It always shows the current product decisions.
+
+At PROCEED, `project-brief` copies this section into the "Product decisions" section of `1-idea/PROJECT-DESCRIPTION.md`. Later stages read the product decisions in the brief.
+
 ## When the verdict changes
 
 A revision round of `idea-grill` can change the verdict of an idea, for example after `idea-research`.
 
 - The `**Verdict:**` and `**Date:**` lines of `IDEA-DECISION.md` show the current verdict and the day it was given. A change edits these two lines.
-- Everything under these two lines only grows. The "First verdict" section keeps the reason for the first verdict. Each change adds a dated section under "Revisions" with the reason for the new verdict.
+- A revision round can also change a product decision. It edits the line in "Product decisions", and its dated section under "Revisions" gives the old choice, the new choice and the reason.
+- Everything else in the file only grows. The "First verdict" section keeps the reason for the first verdict. Each change adds a dated section under "Revisions" with the reason for the new verdict.
 - Only `idea-grill` gives a verdict. `idea-research` saves its findings in `1-idea/research/`, and a revision round of `idea-grill` reads them.
 - After each verdict, `idea-grill` runs `setup-meta-repo`. While the stage is `idea`, `setup-meta-repo` makes the project file match the verdict: PROCEED has a `PROJECT.md`, and REFINE and PARK have none. After the stage `idea`, the Idea Engine does not change the verdict.
 - REJECT is final. `setup-meta-repo` archives the repo, and no skill opens it again. To reopen a rejected idea, the owner unarchives the repo by hand and runs a revision round.
@@ -129,6 +136,10 @@ The Prototype Engine runs inside a meta repo and writes into `3-prototype/`:
 - **Tools that change a wrong slug into a right one.** Rejected: a quietly changed slug breaks the rule of one slug everywhere.
 - **A `**Verdict:**` line that never changes, with the current verdict in the newest dated section.** Rejected: the Hub and `setup-meta-repo` must then read sections, not one line.
 - **A new decision record for each round.** Rejected: readers must then find the newest file.
+- **Product decisions that only grow, with the changed ones in each dated section.** Rejected: readers must then merge the sections to find the current choice for each topic.
+- **Product decisions in a separate file in `1-idea/`.** Rejected: one more file for each idea, and the reasons for a change then live in another file.
+- **Product decisions only in the brief.** Rejected: the brief exists only after PROCEED, so the choices of a REFINE round have no place.
+- **`project-brief` sorts each product decision into the sections of the brief that exist.** Rejected: two runs can then put the same choice in different sections.
 - **`idea-research` also gives a verdict.** Rejected: the verdict logic is then in two skills, and the two copies can drift apart.
 - **PROCEED can change only to REJECT.** Rejected: it forces a REJECT where REFINE is the honest verdict.
 - **A project file that stays after the verdict moves away from PROCEED.** Rejected: the Hub then shows a project that is not a project.
