@@ -10,7 +10,7 @@ The owner's general `learn-from-source` skill turns a source into proposals for 
 
 ## The proposal
 
-A proposal for an engine adds one part to the parts from ADR 0001: the label "proven" or "worth testing". A practice from a source is "worth testing" unless the source shows strong evidence and the owner agrees that it is proven.
+A proposal for an engine adds one part to the parts from ADR 0001: the label "proven" or "worth testing". A practice from a source is "worth testing" unless the source check rates it "measured" and the owner agrees that it is proven.
 
 Each approved proposal is one pull request on the engine repo. The owner merges it.
 
