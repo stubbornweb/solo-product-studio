@@ -23,7 +23,7 @@ Each repo has one GitHub Actions workflow with `permissions: contents: read`:
 | --- | --- |
 | `prototype-engine`, `hub`, code repos | `npm ci`, `vp check`, `vp test` on Node 26 |
 | `idea-engine` | `npm ci`, `vp check`, `vp test` on Node 26, then `claude plugin validate` on the plugin |
-| `solo-product-studio` | `claude plugin validate --strict` on the marketplace |
+| `solo-product-studio` | `claude plugin validate` on the marketplace and the studio plugin |
 | meta repos, `clients-meta` | no CI |
 
 ## Releases
@@ -76,7 +76,7 @@ A new engine repo has:
 - **GitHub Team, to protect `main` on private repos.** Rejected: the hook on the owner's computer blocks pushes to `main`.
 - **The push hook and branch protection now.** Rejected: the owner ships first, and the rules in `home/AGENTS.md` already say what goes through a pull request.
 - **Version numbers and tags for each release.** Rejected: when `version` is set and not raised, users do not get new commits. A forgotten step then loses the update without a warning.
-- **`claude plugin validate --strict` on an engine plugin.** Rejected: `--strict` makes every warning an error, and the check warns about two choices in this ADR, the plugin with no `version` field and the `CLAUDE.md` at the plugin root. Without `--strict`, errors still fail CI. The marketplace has no such warnings, so its check keeps `--strict`.
+- **`claude plugin validate --strict` on a plugin.** Rejected: `--strict` makes every warning an error, and the check warns about two choices in this ADR, the plugin with no `version` field and the `CLAUDE.md` at the plugin root. Without `--strict`, errors still fail CI. The studio repo is a plugin too (ADR 0008), so its check has no `--strict` either.
 - **Markdown lint and link checks in CI.** Rejected: more config and failed pull requests about style, and they check nothing that breaks a tool.
 - **The full security checklist now.** Rejected: no repo holds client code or credentials yet, and the owner ships first. Push protection is the exception, because a leaked key in a public repo cannot be taken back.
 - **No licence, so that the code keeps all rights for a sale.** Rejected: the engine repos are public so that their plugins can be used. A sale is about the brand, not the code.

@@ -16,4 +16,4 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 26
-      - run: npx -y @anthropic-ai/claude-code plugin validate --strict .
+      - run: npx -y @anthropic-ai/claude-code plugin validate .

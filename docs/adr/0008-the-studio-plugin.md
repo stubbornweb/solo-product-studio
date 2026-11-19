@@ -15,4 +15,4 @@ This changes one rule of ADR 0002. That rule said only engine repos are plugins,
 - The map in `ask-studio` names every skill the owner can reach. It does not change by itself, so `AGENTS.md` of the studio repo and of each engine repo has a rule: a change that adds, renames or removes a skill, or changes its place in the flow, also updates `ask-studio`. A change in an engine repo then needs a second pull request in the studio repo.
 - `ask-studio` reads a skill's `SKILL.md` before it says what the skill does. The one-line summaries in its map are only for orientation.
 - `ask-studio` maps only studio skills. For the build stage it points to `/ask-matt`.
-- `claude plugin validate --strict .` now checks the studio plugin as well as the marketplace.
+- `claude plugin validate .` now checks the studio plugin as well as the marketplace. Like the engines, the studio plugin has no `version` field, so each merge to `main` reaches the owner at once, and the check runs without `--strict` (ADR 0004).
