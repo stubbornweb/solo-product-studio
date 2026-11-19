@@ -1,6 +1,6 @@
 # Data: Haiku builds with Opus job sheets, against only Opus Medium
 
-Measured on November 19, 2026, on the $20 Pro plan. One spec was built twice, on two branches, and each branch got its own blind review. The test prompts are in `~/www/home/docs/prompts/haiku-factory/`. The run notes and job sheets were in `~/www/.scratch/reference-mods/`. They were deleted after this file was written, so this file is the only copy of the numbers.
+Measured on November 19, 2026, on the $20 Pro plan. One spec was built twice, on two branches, and each branch got its own blind review. This file is the only copy of the numbers: the test prompts, the run notes and the job sheets were deleted after it was written.
 
 ## The test
 
@@ -121,7 +121,7 @@ During run A, the main session told the owner "Opus writes no code in this run".
 
 ## Review, one row for each ticket
 
-Each run had its own review session (Opus High), with the same main prompt (`05-review.md`). A serious problem is a bug, a wrong behaviour, a weakened test, or a broken repo rule.
+Each run had its own review session (Opus High), with the same main prompt. A serious problem is a bug, a wrong behaviour, a weakened test, or a broken repo rule.
 
 | Ticket | A: task done | A: quality (1–5) | A: serious | A: minor | B: task done | B: quality (1–5) | B: serious | B: minor |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -152,7 +152,7 @@ In both runs, #77 is "no" because the repo has no record of the real Workbench c
 ## Limits of this data
 
 - **The spec caused a serious problem in both runs.** Spec #72 says "`workbench` gives other Capabilities a way to make a bridge". This goes against ADR 0004 (a Capability makes only `tools()` public). Run A broke the ADR in #73, and run B broke it in #74.
-- **The two reviews did not use the same helper prompts.** `05-review.md` fixes only the main prompt, and each review session wrote its own two helper prompts. Review A ran `cargo xtask ci` at the #73 commit; review B ran it only at the branch tip. Both reviews counted the break of the cancel rule in #74 as serious.
+- **The two reviews did not use the same helper prompts.** The review prompt fixed only the main prompt, and each review session wrote its own two helper prompts. Review A ran `cargo xtask ci` at the #73 commit; review B ran it only at the branch tip. Both reviews counted the break of the cancel rule in #74 as serious.
 - **A "try" also counted lint failures.** See "Build". So "first try passed" says little about the code.
 - **Run B stopped once.** The run B session ended at about 02:35 UTC, while the #74 and #76 helpers were building. The log does not say why. New helpers finished in the same worktrees. The tries for #74 and #76 come from the new helpers, and the stopped helpers' usage is in run B's cost.
 - **The runs merged in different ways.** Run B used a separate Opus helper for each merge ($0.59). In run A, the main session merged.
