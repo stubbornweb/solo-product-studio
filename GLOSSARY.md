@@ -37,6 +37,10 @@ The engine that designs a project before it is prototyped.
 **Prototype Engine**:
 The engine that builds a prototype from a brief.
 
+**Studio plugin**:
+The plugin of the studio repo itself. It holds the skills that cover more than one engine.
+_Avoid_: main plugin, core plugin
+
 **Practice**:
 A way of working that one engine follows. It is "proven" or "worth testing".
 
