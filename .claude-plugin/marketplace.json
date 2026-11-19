@@ -25,6 +25,13 @@
       "description": "Turn a brief or a pitch into a fast, distinctive website prototype inside the meta repo of an idea, then check it in a real browser.",
       "category": "web",
       "keywords": ["prototype", "website", "landing-page", "motion", "visual-qa"]
+    },
+    {
+      "name": "studio",
+      "source": "./",
+      "description": "Ask which studio skill or flow fits your situation: a router over the skills of every engine.",
+      "category": "product",
+      "keywords": ["router", "studio", "skills"]
     }
   ]
 }

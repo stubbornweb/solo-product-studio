@@ -1,0 +1,11 @@
+{
+  "name": "studio",
+  "description": "The studio plugin: skills that cover more than one engine, such as ask-studio, the router over the skills of every engine.",
+  "author": {
+    "name": "Yevhenii Volosiuk"
+  },
+  "repository": "https://github.com/stubbornweb/solo-product-studio",
+  "license": "MIT",
+  "keywords": ["skills", "router", "studio"],
+  "skills": ["./skills/ask-studio"]
+}
