@@ -1,6 +1,6 @@
 # Studio — agent rules
 
-This repository holds the shared documents of the studio: the words in `GLOSSARY.md`, the system decisions in `docs/adr/`, and the one plugin marketplace in `.claude-plugin/marketplace.json`. The studio is a project too. Its meta repo is `stubbornweb/solo-product-studio-meta`, with the idea and the system brief in `1-idea/`.
+This repository holds the shared documents of the studio: the words in `GLOSSARY.md`, the system decisions in `docs/adr/`, and the one plugin marketplace in `.claude-plugin/marketplace.json`. It is also the studio plugin (ADR 0008): `.claude-plugin/plugin.json` and the skills in `skills/` that cover more than one engine. The studio is a project too. Its meta repo is `stubbornweb/solo-product-studio-meta`, with the idea and the system brief in `1-idea/`.
 
 ## Shared rules
 
@@ -15,3 +15,4 @@ This repository holds the shared documents of the studio: the words in `GLOSSARY
 - `docs/sources/` holds read-only snapshots. Decisions go in an ADR or an issue.
 - Read an engine's files from `stubbornweb/<engine>` on GitHub, or from its local clone after `git pull` on `main`. The plugin cache in `~/.claude/plugins/cache/` can be older than `main`.
 - Each engine plugin has one entry in `.claude-plugin/marketplace.json`, with no `version` field, so every merge to `main` of the engine repo is a release.
+- [`ask-studio`](skills/ask-studio/SKILL.md) is the router that maps every skill the owner can reach. When a change adds, renames or removes a skill of any engine, or changes its place in the flow, re-read `skills/ask-studio/SKILL.md` and update it in the same change. A router that names a missing skill, or misses a new one, gives wrong answers.
