@@ -43,7 +43,7 @@ Every public repo has an MIT `LICENSE` file.
 
 ## Agent rules
 
-The rules for branches and merges and the agent skills setup live once, in `home/AGENTS.md`. Claude Code loads that file in every session under `~/www`, through `~/www/CLAUDE.md`.
+The rules for branches and merges and the agent skills setup live once, in `home/AGENTS.md`. Claude Code loads that file in every session, through an import in `~/.claude/CLAUDE.md`.
 
 Every repo also has its own short `AGENTS.md`. It starts with these shared rules, then adds the rules for that repo:
 
